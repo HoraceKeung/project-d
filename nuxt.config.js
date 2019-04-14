@@ -15,12 +15,17 @@ export default {
 	},
 	modules: ['nuxt-purgecss', '@nuxtjs/pwa'],
 	purgeCSS: {
+		mode: 'postcss',
 		whitelist: () => whitelister([
 			'./assets/css/*.css'
 		])
 	},
 	build: {
-		extractCSS: true,
+		postcss: {
+			plugins: {
+				tailwindcss: './tailwind.config.js'
+			}
+		},
 		// Run ESLint on save
 		extend(config, ctx) {
 			if (ctx.isDev && ctx.isClient) {
