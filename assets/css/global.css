@@ -31,6 +31,10 @@ body {
 .transition {
 	transition: all 0.15s;
 }
+.my-auto {
+	margin-top: auto;
+	margin-bottom: auto;
+}
 /* Button */
 button:focus, textarea:focus {
 	@apply outline-none
