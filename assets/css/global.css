@@ -26,10 +26,13 @@ html {
 	-webkit-tap-highlight-color: transparent;
 }
 body {
-	@apply bg-dark
+	@apply bg-darker
 }
 .transition {
 	transition: all 0.15s;
+}
+.v--modal-overlay {
+	background-color: rgba(0, 0, 0, 0.7) !important;
 }
 /* Button */
 button:focus, textarea:focus {
@@ -38,7 +41,7 @@ button:focus, textarea:focus {
 .btn {
 	@apply border-2 py-1 px-2 font-bold rounded-lg shadow
 }
-.btn:hover {
+.btn:hover, .link:hover {
 	opacity: 0.9;
 }
 .btn:disabled {
@@ -134,4 +137,66 @@ button:focus, textarea:focus {
 }
 .hover-pink:hover {
 	@apply bg-pink-500
+}
+/* Text colour */
+.text-gray {
+	@apply text-gray-500
+}
+.text-red {
+	@apply text-red-500
+}
+.text-orange {
+	@apply text-orange-500
+}
+.text-yellow {
+	@apply text-yellow-500
+}
+.text-green {
+	@apply text-green-500
+}
+.text-teal {
+	@apply text-teal-500
+}
+.text-blue {
+	@apply text-blue-500
+}
+.text-indigo {
+	@apply text-indigo-500
+}
+.text-purple {
+	@apply text-purple-500
+}
+.text-pink {
+	@apply text-pink-500
+}
+/* Border colour */
+.border-gray {
+	@apply border-gray-500
+}
+.border-red {
+	@apply border-red-500
+}
+.border-orange {
+	@apply border-orange-500
+}
+.border-yellow {
+	@apply border-yellow-500
+}
+.border-green {
+	@apply border-green-500
+}
+.border-teal {
+	@apply border-teal-500
+}
+.border-blue {
+	@apply border-blue-500
+}
+.border-indigo {
+	@apply border-indigo-500
+}
+.border-purple {
+	@apply border-purple-500
+}
+.border-pink {
+	@apply border-pink-500
 }

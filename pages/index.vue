@@ -1,16 +1,14 @@
 <template>
-	<section class="flex overflow-hidden">
-		<div class="flex flex-col h-screen w-full">
-			<app-header/>
-			<div class="bg-darker flex-1">
-				<div class="container pt-4">
-					<p v-if="!entries.length" class="text-center text-white">No entry</p>
-					<read-entry v-for="e in entries" :key="e.id" :entry="e"/>
-				</div>
+	<section class="flex flex-col h-screen w-full">
+		<app-header/>
+		<div class="flex-1">
+			<div class="container p-4">
+				<p v-if="!entries.length" class="text-center text-white">No entry</p>
+				<read-entry v-for="e in entries" :key="e.id" :entry="e"/>
 			</div>
-			<add-button/>
-			<modal-add-entry/>
 		</div>
+		<add-button/>
+		<modal-add-entry/>
 		<settings/>
 	</section>
 </template>

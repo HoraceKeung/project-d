@@ -8,13 +8,27 @@
 		<div v-if="entry.type==='Text'">
 			<p v-for="(p,index) in entry.content.split('\n')" :key="entry.id+index">{{p}}</p>
 		</div>
+		<div v-else-if="entry.type==='Image' && media">
+			<img class="max-w-full" :src="media" alt="image">
+		</div>
 	</div>
 </template>
 
 <script>
+import util from '~/assets/js/util'
 export default {
 	props: {
 		entry: {type: Object, required: true}
+	},
+	created () {
+		if (this.entry.type !== 'Text') {
+			const blob = util.arrayBufferToBlob(this.entry.content.buffer, this.entry.content.mime)
+			const reader = new FileReader()
+			reader.onload = () => {
+				this.media = reader.result
+			}
+			reader.readAsDataURL(blob)
+		}
 	},
 	methods: {
 		deleteEntry () {
@@ -23,6 +37,9 @@ export default {
 			this.$store.commit('setEntries', clone)
 		}
 	},
+	data: () => ({
+		media: null
+	}),
 	filters: {
 		date (val) {
 			return new Intl.DateTimeFormat('en-GB', {
