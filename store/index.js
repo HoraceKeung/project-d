@@ -9,14 +9,16 @@ export const plugins = [(store => {
 })]
 
 export const state = () => ({
-	persistentMutations: ['setDeviceId', 'setEntries'],
+	persistentMutations: ['setDeviceId', 'setColour', 'setEntries'],
 	deviceId: null,
-	colour: 'red',
-	entries: []
+	colour: 'gray',
+	entries: [],
+	showSettings: false
 })
 
 export const mutations = {
 	setDeviceId (state, id) { state.deviceId = id },
 	setColour (state, colour) { state.colour = colour },
-	setEntries (state, arr) { state.entries = arr }
+	setEntries (state, arr) { state.entries = arr },
+	setShowSettings (state, bool) { state.showSettings = bool }
 }

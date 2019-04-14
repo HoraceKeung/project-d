@@ -14,7 +14,9 @@ Vue.mixin({
 export default async ({ store }) => {
 	// Load state from indexedDB to store
 	await Promise.all(store.state.persistentMutations.map(m => localforage.getItem(m))).then(values => {
-		values.forEach((v, index) => { store.commit(store.state.persistentMutations[index], v) })
+		values.forEach((v, index) => {
+			if (v) store.commit(store.state.persistentMutations[index], v)
+		})
 	})
 	if (!store.state.deviceId) store.commit('setDeviceId', uuid())
 }
