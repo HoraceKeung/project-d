@@ -1,0 +1,28 @@
+{
+	"name": "project-d",
+	"version": "1.0.0",
+	"description": "Diary",
+	"author": "Horace Keung",
+	"private": true,
+	"scripts": {
+		"dev": "nuxt -o",
+		"live": "nuxt generate && firebase deploy"
+	},
+	"dependencies": {
+		"@nuxtjs/pwa": "^3.0.0-beta.14",
+		"localforage": "^1.7.3",
+		"nuxt": "^2.6.1",
+		"uuid": "^3.3.2",
+		"vue-js-modal": "^1.3.28"
+	},
+	"devDependencies": {
+		"autoprefixer": "^9.5.1",
+		"babel-eslint": "^10.0.1",
+		"eslint": "^5.16.0",
+		"eslint-loader": "^2.1.2",
+		"eslint-plugin-vue": "^5.2.2",
+		"nuxt-purgecss": "^0.2.1",
+		"purgecss-whitelister": "^2.4.0",
+		"tailwindcss": "^1.0.0-beta.4"
+	}
+}
