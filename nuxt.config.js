@@ -18,7 +18,9 @@ export default {
 	purgeCSS: {
 		mode: 'postcss',
 		whitelist: () => whitelister([
-			'./assets/css/*.css'
+			'./assets/css/*.css',
+			'./node_modules/video.js/dist/video-js.css',
+			'./node_modules/videojs-record/dist/css/videojs.record.css'
 		])
 	},
 	build: {

@@ -9,6 +9,8 @@
 /** ------------------------------------------------------------
   ##  CUSTOM CLASSES
   --------------------------------------------------------- */
+@import 'video.js/dist/video-js.css';
+@import 'videojs-record/dist/css/videojs.record.css';
 
 html {
 	font-family: Arial, Helvetica, sans-serif;

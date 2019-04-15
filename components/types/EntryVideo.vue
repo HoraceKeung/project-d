@@ -5,8 +5,6 @@
 </template>
 
 <script>
-import 'video.js/dist/video-js.css'
-import 'videojs-record/dist/css/videojs.record.css'
 import videojs from 'video.js'
 import Record from 'videojs-record/dist/videojs.record.js'
 import util from '~/assets/js/util'
