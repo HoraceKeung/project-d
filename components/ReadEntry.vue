@@ -11,6 +11,11 @@
 		<div v-else-if="entry.type==='Image' && media">
 			<img class="max-w-full" :src="media" alt="image">
 		</div>
+		<div v-else-if="entry.type==='Video' && media">
+			<video width="320" height="240" controls>
+				<source :src="media" :type="this.entry.content.mime">
+			</video>
+		</div>
 	</div>
 </template>
 
