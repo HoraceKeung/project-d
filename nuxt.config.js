@@ -20,6 +20,7 @@ export default {
 		whitelist: () => whitelister([
 			'./assets/css/*.css',
 			'./node_modules/video.js/dist/video-js.css',
+			'./node_modules/videojs-wavesurfer/dist/css/videojs.wavesurfer.css',
 			'./node_modules/videojs-record/dist/css/videojs.record.css'
 		])
 	},

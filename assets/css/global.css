@@ -10,6 +10,7 @@
   ##  CUSTOM CLASSES
   --------------------------------------------------------- */
 @import 'video.js/dist/video-js.css';
+@import 'videojs-wavesurfer/dist/css/videojs.wavesurfer.css';
 @import 'videojs-record/dist/css/videojs.record.css';
 
 html {
@@ -37,7 +38,7 @@ body {
 	background-color: rgba(0, 0, 0, 0.7) !important;
 }
 /* Button */
-button:focus, textarea:focus {
+button:focus, textarea:focus, video:focus, audio:focus {
 	@apply outline-none
 }
 .btn {
@@ -110,34 +111,34 @@ button:focus, textarea:focus {
 	@apply bg-transparent border-pink-500 text-pink-500
 }
 /* Hover colour */
-.hover-gray:hover {
+.hover-gray:hover, .bg-gray {
 	@apply bg-gray-500
 }
-.hover-red:hover {
+.hover-red:hover, .bg-red {
 	@apply bg-red-500
 }
-.hover-orange:hover {
+.hover-orange:hover, .bg-orange {
 	@apply bg-orange-500
 }
-.hover-yellow:hover {
+.hover-yellow:hover, .bg-yellow {
 	@apply bg-yellow-500
 }
-.hover-green:hover {
+.hover-green:hover, .bg-green {
 	@apply bg-green-500
 }
-.hover-teal:hover {
+.hover-teal:hover, .bg-teal {
 	@apply bg-teal-500
 }
-.hover-blue:hover {
+.hover-blue:hover, .bg-blue {
 	@apply bg-blue-500
 }
-.hover-indigo:hover {
+.hover-indigo:hover, .bg-indigo {
 	@apply bg-indigo-500
 }
-.hover-purple:hover {
+.hover-purple:hover, .bg-purple {
 	@apply bg-purple-500
 }
-.hover-pink:hover {
+.hover-pink:hover, .bg-pink {
 	@apply bg-pink-500
 }
 /* Text colour */

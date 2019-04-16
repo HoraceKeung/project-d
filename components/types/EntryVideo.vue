@@ -11,10 +11,7 @@ import util from '~/assets/js/util'
 export default {
 	props: ['content'],
 	mounted () {
-		this.player = videojs('#myVideo', this.options, () => {
-			let msg = 'Using video.js ' + videojs.VERSION + ' with videojs-record ' + videojs.getPluginVersion('record') + ' and recordrtc ' + RecordRTC.version;
-			videojs.log(msg)
-		})
+		this.player = videojs('#myVideo', this.options)
 		this.player.on('deviceReady', () => {
 			console.log('device is ready!')
 		})
