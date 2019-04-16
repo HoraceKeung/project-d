@@ -1,7 +1,7 @@
 <template>
-	<modal name="add-entry" adaptive height="auto" classes="rounded-lg" @before-open="beforeOpen" :clickToClose="false">
+	<modal name="add-entry" adaptive height="auto" classes="rounded-lg" @before-open="reset" :clickToClose="false">
 		<div class="bg-dark h-16 px-3 flex justify-between">
-			<div :class="`hover-${colour} h-8 w-8 flex rounded-full cursor-pointer transition my-auto`" @click="type?type=null:$modal.hide('add-entry')">
+			<div :class="`hover-${colour} h-8 w-8 flex rounded-full cursor-pointer transition my-auto`" @click="type?reset():$modal.hide('add-entry')">
 				<div class="m-auto">
 					<img v-if="type" class="h-4" src="~/assets/img/back.png" alt="close">
 					<img v-else class="h-4 w-4" src="~/assets/img/white-cross.png" alt="close">
@@ -35,8 +35,9 @@ export default {
 		entries () { return this.$store.state.entries || [] }
 	},
 	methods: {
-		beforeOpen () {
+		reset () {
 			this.type = null
+			this.content = null
 		},
 		save () {
 			this.$store.commit('setEntries', this.entries.concat([{
