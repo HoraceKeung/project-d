@@ -11,6 +11,7 @@
 				</div>
 			</div>
 			<div class="p-4">
+				<pwa-button/>
 				<p class="mb-2">Colour</p>
 				<div class="flex flex-wrap -mx-1">
 					<div v-for="c in colours" :key="c" class="w-1/2 px-1 mb-2">
@@ -23,7 +24,9 @@
 </template>
 
 <script>
+import PwaButton from '~/components/PwaButton'
 export default {
+	components: {PwaButton},
 	data: () => ({
 		colours: [
 			'gray',

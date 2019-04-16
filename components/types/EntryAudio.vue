@@ -16,7 +16,27 @@ import util from '~/assets/js/util'
 export default {
 	props: ['content'],
 	mounted () {
-		this.player = videojs('#myAudio', this.options)
+		this.player = videojs('#myAudio', {
+			controls: true,
+			fluid: false,
+			width: (window.innerWidth > 600 ? 600 : window.innerWidth) - 32,
+			height: 240,
+			plugins: {
+				wavesurfer: {
+					src: 'live',
+					waveColor: 'white',
+					progressColor: '#24292e',
+					cursorWidth: 1,
+					msDisplayMax: 20,
+					hideScrollbar: true
+				},
+				record: {
+					audio: true,
+					video: false,
+					maxLength: 20
+				}
+			}
+		})
 		this.player.on('deviceReady', () => {
 			console.log('device is ready!')
 		})
@@ -40,28 +60,7 @@ export default {
 		if (this.player) this.player.dispose()
 	},
 	data: () => ({
-		player: '',
-		options: {
-			controls: true,
-			fluid: false,
-			width: 565,
-			height: 300,
-			plugins: {
-				wavesurfer: {
-					src: 'live',
-					waveColor: 'white',
-					progressColor: '#24292e',
-					cursorWidth: 1,
-					msDisplayMax: 20,
-					hideScrollbar: true
-				},
-				record: {
-					audio: true,
-					video: false,
-					maxLength: 20
-				}
-			}
-		}
+		player: ''
 	})
 }
 </script>

@@ -13,9 +13,9 @@
 			<component v-if="type" :is="`Entry${type}`" :content.sync="content"/>
 			<div v-else>
 				<p class="text-white mb-2">Pick an entry type</p>
-				<div class="flex -mx-2">
-					<div v-for="t in diaryTypes" :key="t" class="w-1/4 px-2">
-						<button type="button" :class="`btn btn-${colour} w-full uppercase`" @click="type=t">{{t}}</button>
+				<div class="flex -mx-1 sm:-mx-2">
+					<div v-for="t in diaryTypes" :key="t" class="w-1/4 px-1 sm:px-2">
+						<button type="button" :class="`btn btn-${colour} w-full uppercase text-sm sm:text-base`" @click="type=t">{{t}}</button>
 					</div>
 				</div>
 			</div>

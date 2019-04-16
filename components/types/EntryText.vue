@@ -1,9 +1,9 @@
 <template>
 	<div class="flex flex-col">
 		<textarea class="rounded w-full p-2 mb-2 bg-dark text-white" rows="9" :maxlength="maxlength" v-model="text"/>
-		<div class="ml-auto h-6 w-6">
-			<div class="absolute h-6 w-6 flex">
-				<p v-show="remainChar<11" class="text-white text-xs m-auto">{{remainChar}}</p>
+		<div class="ml-auto h-10 w-10">
+			<div class="absolute h-10 w-10 flex">
+				<p class="text-white text-xs m-auto">{{remainChar}}</p>
 			</div>
 			<div style="transform: rotate(-90deg);">
 				<svg class="h-full w-full" viewBox="0 0 20 20">

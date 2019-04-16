@@ -11,7 +11,23 @@ import util from '~/assets/js/util'
 export default {
 	props: ['content'],
 	mounted () {
-		this.player = videojs('#myVideo', this.options)
+		this.player = videojs('#myVideo', {
+			controls: true,
+			autoplay: false,
+			fluid: false,
+			loop: false,
+			width: (window.innerWidth > 600 ? 600 : window.innerWidth) - 32,
+			height: 240,
+			controlBar: {
+				volumePanel: false
+			},
+			plugins: {
+				record: {
+					audio: false,
+					video: true
+				}
+			}
+		})
 		this.player.on('deviceReady', () => {
 			console.log('device is ready!')
 		})
@@ -35,24 +51,7 @@ export default {
 		if (this.player) this.player.dispose()
 	},
 	data: () => ({
-		player: '',
-		options: {
-			controls: true,
-			autoplay: false,
-			fluid: false,
-			loop: false,
-			width: 320,
-			height: 240,
-			controlBar: {
-				volumePanel: false
-			},
-			plugins: {
-				record: {
-					audio: false,
-					video: true
-				}
-			}
-		}
+		player: ''
 	})
 }
 </script>

@@ -12,7 +12,7 @@
 			<img class="max-w-full" :src="media" alt="image">
 		</div>
 		<div v-else-if="entry.type==='Audio' && media">
-			<audio controls>
+			<audio controls class="w-full">
 				<source :src="media" :type="this.entry.content.mime">
 			</audio>
 		</div>
